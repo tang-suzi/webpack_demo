@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   // 模式
   mode: "development", // 开发模式
-  //   mode: "production", // 生产模式
+  devtool: "source-map", // 源码映射
   // 入口
   entry: "./src/main.js", // 相对路径
   // 出口
@@ -93,6 +93,7 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, "../public/index.html"),
     }),
+    new MiniCssExtractPlugin()
   ],
   devServer: {
     host: "localhost",

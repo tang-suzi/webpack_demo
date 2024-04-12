@@ -3,6 +3,7 @@ const ESLintPligin = require("eslint-webpack-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const { devtool } = require("./webpack.dev");
 
 function getStyleLoader(pre) {
   return [
@@ -23,6 +24,7 @@ function getStyleLoader(pre) {
 module.exports = {
   // 模式
   mode: "production", // 开发模式
+  devtool: "cheap-module-source-map"
   //   mode: "production", // 生产模式
   // 入口
   entry: "./src/main.js", // 相对路径
