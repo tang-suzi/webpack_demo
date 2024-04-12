@@ -93,11 +93,12 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, "../public/index.html"),
     }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
   ],
   devServer: {
     host: "localhost",
     port: 3000,
     open: true,
+    hot: true, // 开启热更新(只用于开发环境)
   },
 };
