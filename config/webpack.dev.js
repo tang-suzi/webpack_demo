@@ -76,7 +76,8 @@ module.exports = {
           },
           {
             test: /\.js$/,
-            exclude: /node_modules/, // 排除node_modules文件夹
+            // exclude: /node_modules/, // 排除node_modules文件夹
+            include: path.resolve(__dirname, "../src"), // 包含src文件夹
             use: {
               loader: "babel-loader",
               // options: {
@@ -93,6 +94,7 @@ module.exports = {
     // 插件的配置
     // new ESLintPligin({
     //   context: path.resolve(__dirname, "src"),
+    //   exclude: "node_modules",
     // }),
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, "../public/index.html"),
